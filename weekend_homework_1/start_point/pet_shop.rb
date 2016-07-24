@@ -73,3 +73,23 @@ def customer_pet_count(customers)
     customer[:pets]<<newpet
     
   end
+
+  def customer_can_afford_pet(customer, new_pet)
+    if customer[:cash].to_f >= new_pet[:price].to_f
+      return true
+    else
+      return false
+    end
+  end
+
+  def sell_pet_to_customer(pet_shop, pet, customer)
+    
+    # add_pet_to_customer(customer, pet)
+    spend = -pet[:price].to_i
+    sold +=1
+
+    customer_pet_count(customer)
+    increase_pets_sold pet_shop, sold)
+    add_or_remove_cash(pet_shop, spend)
+
+  end
