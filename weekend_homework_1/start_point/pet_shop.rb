@@ -69,5 +69,7 @@ def customer_pet_count(customers)
   end
 
   def add_pet_to_customer(customer, new_pet)
+    newpet = new_pet
+    customer[:pets]<<newpet
     
   end
