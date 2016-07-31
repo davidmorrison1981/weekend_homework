@@ -84,10 +84,8 @@ def customer_pet_count(customers)
 
   def sell_pet_to_customer(pet_shop, pet, customer)
     
-    # add_pet_to_customer(customer, pet)
-    spend = -pet[:price].to_i
-    sold +=1
-
+    
+    add_pet_to_customer(customer, pet)
     customer_pet_count(customer)
     increase_pets_sold pet_shop, sold)
     add_or_remove_cash(pet_shop, spend)

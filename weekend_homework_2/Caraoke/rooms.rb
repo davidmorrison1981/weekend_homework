@@ -1,13 +1,21 @@
-class rooms
+require_relative("./room_runner")
 
-  def initialize
-    @time_slot= time_slot
-    @booked = booked
+class Rooms
+
+  def room_genre(room_select)
+    if @room_select == 1
+      room_genre = @room.rooms[:jays_room]
+    elsif room_select == 2
+      room_genre = @room.rooms[:zsolts_room]
+    elsif @room_select == 3
+      room_genre = @room.rooms[:tonys_room]
+    else
+      puts "Sorry that selection isn't available, please try again"
+      intro_screen()
+    end
   end
 
-def room_times(1)
-  time_slots = 12* time_slot
-  return room_times
-end
+
+
 
 end
