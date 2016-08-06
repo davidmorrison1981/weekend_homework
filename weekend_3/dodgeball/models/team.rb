@@ -16,25 +16,29 @@ class Team
     @id = team[ 'id' ].to_i
   end
 
-  # def albums()
-  #   sql = "SELECT * FROM albums WHERE artist_id = #{@id};"
-  #   album = SqlRunner.run( sql )
-  #   result = album.map{ |album| Album.new(album)}
-  #   return result 
-  # end
+  def self.delete_all()
+    sql = "DELETE FROM teams"
+    SqlRunner.run(sql)
+  end
 
-  # def self.all()
-  #   sql = "SELECT * FROM artists;"
-  #   artists = SqlRunner.run( sql )
-  #   result = artists.map{ |artist| Artist.new(artist) }
-  #   return result
-  # end
+  def matches()
+    sql = "SELECT * FROM matches WHERE team.id = #{@id};"
+    match = SqlRunner.run( sql )
+    result = match.map{ |match| Match.new(match)}
+    return result 
+  end
 
-  # def self.find(id)
-  #   sql = "SELECT * FROM artists WHERE id = #{id};"
-  #   artist = SqlRunner.run( sql ).first
-  #   return Artist.new(artist)
-  # end
+  def self.all()
+    sql = "SELECT * FROM teams;"
+    teams = SqlRunner.run( sql )
+    result = teams.map{ |team| Team.new(team) }
+    return result
+  end
+
+  def self.find(id)
+    sql = "SELECT * FROM teams WHERE id = #{id};"
+    team = SqlRunner.run( sql ).first
+    return Team.new(team)
+  end
   
-
 end
