@@ -7,8 +7,8 @@ class Match
 
   def initialize( options )
     @id = options[ 'id' ].to_i
-    @hometeam_id = options[ 'team1.id' ].to_i
-    @awayteam_id = options[ 'team2.id' ].to_i
+    @hometeam_id = options[ 'hometeam_id' ].to_i
+    @awayteam_id = options[ 'awayteam_id' ].to_i
     @hometeam_score = options[ 'hometeam_score' ]
     @awayteam_score = options[ 'awayteam_score' ]
   end
