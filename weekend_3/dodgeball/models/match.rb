@@ -20,10 +20,10 @@ class Match
   end
 
   def team()
-    sql = "SELECT * FROM teams WHERE id = #{@team.id};"
+    sql = "SELECT * FROM teams WHERE id = #{@id};"
     team = SqlRunner.run( sql ).first
     team = Team.new(team)
-    return result 
+    return team
   end
 
   def self.delete_all()

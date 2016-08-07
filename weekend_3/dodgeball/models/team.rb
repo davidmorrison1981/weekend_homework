@@ -22,7 +22,7 @@ class Team
   end
 
   def matches()
-    sql = "SELECT * FROM matches WHERE team.id = #{@id};"
+    sql = "SELECT * FROM matches WHERE id = #{@id};"
     match = SqlRunner.run( sql )
     result = match.map{ |match| Match.new(match)}
     return result 
