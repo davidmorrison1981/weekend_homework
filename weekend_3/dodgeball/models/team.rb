@@ -16,6 +16,26 @@ class Team
     @id = team[ 'id' ].to_i
   end
 
+  def update()
+    db = PG.connect( { dbname: 'dodgeball', host: 'localhost'} ) 
+
+    sql = "UPDATE teams SET (
+      name = '#{@name}',
+      WHERE id = #{id};
+      "
+    db.exec( sql )
+    db.close()
+  end
+
+  def delete()
+    db = PG.connect( { dbname: 'dodgeball', host: 'localhost'} ) #PG.connect activates the gem to connect with pqsl
+
+    sql = "DELETE FROM teams WHERE id = #{id};
+      "
+    db.exec( sql )
+    db.close()
+  end
+
   def self.delete_all()
     sql = "DELETE FROM teams"
     SqlRunner.run(sql)
